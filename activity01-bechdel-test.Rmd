@@ -24,6 +24,11 @@ In RMarkdown files, we can interweave narrative and R code chunks.
 For example, in the code chunk below we are loading two packages: `{fivethirtyeight}` and `{tidyverse}`.
 There are a number of ways to run this code, but for the time being **knit** your document (in the tool bar of this Rmd file, click on ![knit icon](README-img/knit-icon.png) **Knit**).
 
+```{r}
+install.packages(fivethirtyeight)
+```
+
+
 ```{r load-packages, message=FALSE}
 library(fivethirtyeight)
 library(tidyverse)
@@ -98,7 +103,7 @@ Update the missing variable (i.e., replace the `___` after the minus sign with t
 
 ```{r}
 bechdel90_13 <- bechdel90_13 %>%
-  mutate(roi = (intgross_2013 + domgross_2013 - ___) / budget_2013)
+  mutate(roi = (intgross_2013 + domgross_2013 - budget_2013) / budget_2013)
 ```
 
 Now we can see which movies have the highest return on investment.
